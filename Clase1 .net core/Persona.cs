@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Clase1_.net_core
 {
-    class Persona : IComparableP
+   public class Persona : IComparableP
     {
        protected string nombre;
        protected int dni;

@@ -1,10 +1,11 @@
-﻿using System;
+﻿using Clase1_.net_core.Patron_observer;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Clase1_.net_core
 {
-    class Gerente
+    class Gerente:IObservador
     {
         List<Vendedor> Mejores = new List<Vendedor>();
 

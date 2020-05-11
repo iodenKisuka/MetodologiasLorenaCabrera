@@ -4,10 +4,12 @@ using System.Text;
 
 namespace Clase1_.net_core
 {
-    class Vendedor: Persona
+    public class Vendedor: Persona
     {
         double sueldoBasico;
         public  double bonus;
+        List<Gerente> ListaObservador = new List<Gerente>();
+
 
         public Vendedor(string n, int d, double sueldoBasico, double bonus) : base(n, d)
         {
@@ -15,9 +17,10 @@ namespace Clase1_.net_core
             this.bonus = bonus;
         }
 
-        public void Venta(double monto)
+        public void Venta(int monto)
         {
             Console.WriteLine("Monto "+monto);
+            avisarHizoUnaVenta(monto);
         }
         public void AumentaBonus()
         {
@@ -48,6 +51,15 @@ namespace Clase1_.net_core
         public override string ToString()
         {
             return "nombre " + base.nombre + " dni " + base.dni;
+        }
+
+        //avisa al gerente cada vez que El objeto vendedor realice una venta
+        public void avisarHizoUnaVenta(int monto)
+        {
+            Vendedor vendedor = new Vendedor(base.nombre,base.dni,this.sueldoBasico, this.bonus);
+            Gerente avisarGerente=ListaObservador[0];
+            avisarGerente.Venta(monto,vendedor);
+
         }
 
 
