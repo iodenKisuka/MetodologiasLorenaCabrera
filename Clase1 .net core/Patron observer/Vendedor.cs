@@ -8,7 +8,7 @@ namespace Clase1_.net_core
     {
         double sueldoBasico;
         public  double bonus;
-        List<Gerente> ListaObservador = new List<Gerente>();
+        public List<Gerente> ListaObservador = new List<Gerente>();
 
 
         public Vendedor(string n, int d, double sueldoBasico, double bonus) : base(n, d)
@@ -56,10 +56,16 @@ namespace Clase1_.net_core
         //avisa al gerente cada vez que El objeto vendedor realice una venta
         public void avisarHizoUnaVenta(int monto)
         {
-            Vendedor vendedor = new Vendedor(base.nombre,base.dni,this.sueldoBasico, this.bonus);
-            Gerente avisarGerente=ListaObservador[0];
-            avisarGerente.Venta(monto,vendedor);
-
+            Vendedor vendedor = new Vendedor(base.nombre, base.dni, this.sueldoBasico, this.bonus);
+            foreach (Gerente avisarGerente in ListaObservador)
+            {
+                //Console.WriteLine("Aviso al gerente");
+                avisarGerente.Venta(monto, vendedor); 
+            }
+        }
+        public void AgregargerentecomoObservador(Gerente gerente)
+        {
+            ListaObservador.Add(gerente);
         }
 
 

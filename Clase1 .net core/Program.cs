@@ -80,29 +80,50 @@ namespace Clase1_.net_core
              //CambiarEstrategia(pila6, new Comparar_Alumno_GetNombre());
              CambiarEstrategia(pila6, new Comparar_Alumno_Dni());
              Informar(pila6);*/
-
+            /** Trabajo practico 2
             IColeccionableTP conjunto2 = new Conjunto();
             LLenar(conjunto2,FabricaCreadorIComprable.CrearAlumno);
             ImprimirElementos(conjunto2);
             Informar(conjunto2, FabricaCreadorIComprable.CrearAlumno);
 
-            //Ejercicio 4 Practica 4 reparar
-        /**    Teacher profesor = new Teacher();
-            for (int n = 1; n <= 10; n++)
+            **/
+            //Ejercicio 14 TP3
+            IColeccionableTP coleccion = new Pila();
+            LLenar(coleccion, FabricaCreadorIComprable.Crearvendedor);
+            Gerente gerente = new Gerente();
+            //hacer que gerente sea observador de todos los vendedores
+            //ya esta hecho
+            Interador interador = coleccion.iterador();
+
+            for (int n = 1; n <= coleccion.Cuantos(); n++)
             {
-                Alumno alumno1 = new Alumno();
-                AlumnoMuyEstudioso alumnoE1 = new AlumnoMuyEstudioso();
-                AdaptadorAlumno alumno2 = new AdaptadorAlumno((Student)alumno1);
-                AdaptadorAlumno alumnoE2 = new AdaptadorAlumno((Student)alumnoE1);
-                profesor.goToClass(alumno2.estudiante);
-                profesor.goToClass(alumnoE2.estudiante);
-
-            }   **/
+                Vendedor vendedor = (Vendedor)interador.actual();
+                vendedor.AgregargerentecomoObservador(gerente);
+                interador.siguiente();
+                JornadaDeVentas(coleccion);
+                gerente.Cerrar();
+            }
 
 
-            // Console.WriteLine("Hello World!");
+                //Ejercicio 4 Practica 4 reparar
+                /**    Teacher profesor = new Teacher();
+                    for (int n = 1; n <= 10; n++)
+                    {
+                        Alumno alumno1 = new Alumno();
+                        AlumnoMuyEstudioso alumnoE1 = new AlumnoMuyEstudioso();
+                        AdaptadorAlumno alumno2 = new AdaptadorAlumno((Student)alumno1);
+                        AdaptadorAlumno alumnoE2 = new AdaptadorAlumno((Student)alumnoE1);
+                        profesor.goToClass(alumno2.estudiante);
+                        profesor.goToClass(alumnoE2.estudiante);
+
+                    }   **/
+
+
+                Console.WriteLine("Hello World!");
+
         }
 
+        
         /*  //EJERCICIO  5
           public static void Llenar(IColeccionableTP coleccionable)
           {
@@ -297,6 +318,24 @@ namespace Clase1_.net_core
                 Console.WriteLine("El elemento leído no está en la colección");
             }
         }
+
+        // ejercicio 13 practica 3
+        public static void JornadaDeVentas(IColeccionableTP coleccionable_vendedores)
+        {
+            Interador interador = coleccionable_vendedores.iterador();
+
+            for (int n = 1; n <= 20; n++)
+            {
+                Vendedor vendedor = (Vendedor)interador.actual();
+                interador.siguiente();
+
+                Random numero_al_azar_entre = new Random();
+                int monto = numero_al_azar_entre.Next(1, 7000);
+                vendedor.Venta(monto);
+            }
+
+        }
+        
 
     }
 }

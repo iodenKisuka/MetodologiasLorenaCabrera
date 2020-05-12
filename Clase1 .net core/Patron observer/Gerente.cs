@@ -5,15 +5,17 @@ using System.Text;
 
 namespace Clase1_.net_core
 {
-    class Gerente:IObservador
+    public class Gerente:IObservador
     {
         List<Vendedor> Mejores = new List<Vendedor>();
 
 
         public void Cerrar()
         {
+           
             foreach (Vendedor ven in Mejores)
             {
+                
                 Console.WriteLine(ven.GetNombre + " Bonus: " + ven.bonus);
             }
         }
