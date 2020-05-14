@@ -17,14 +17,13 @@ namespace Clase1_.net_core
 
         public IComparableP actual()
         {
-            Stack<IComparableP> pilas_copia2;
-            pilas_copia2 = Clonar();
-            return pilas_copia2.Pop();
+           
+            return pilas.Pop();
         }
 
         public bool fin()
         {
-            if (posicion < pilas.Count)
+            if (pilas.Count>0)
             {
                 return false;
             }
@@ -36,20 +35,7 @@ namespace Clase1_.net_core
             posicion++;
         }
 
-        public Stack<IComparableP> Clonar()
-        {
-            Stack<IComparableP> pila_clon = new Stack<IComparableP>();
-            Stack<IComparableP> pila_clon2 = new Stack<IComparableP>();
-            int total = pilas.Count;
-            for (int x = 0; x < total; x++)
-            {
-                pila_clon.Push(pilas.Peek());
-                pila_clon2.Push(pilas.Pop());
-
-            }
-            pilas = pila_clon2;
-            return pila_clon;
-        }
+       
 
     }
 }

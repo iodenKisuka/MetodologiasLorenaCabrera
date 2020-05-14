@@ -19,7 +19,8 @@ namespace Clase1_.net_core
 
         public void Venta(int monto)
         {
-            Console.WriteLine("Monto "+monto);
+            // EL ejerciocio solo pide imprimir monto
+            Console.WriteLine("Monto "+monto+" Vendedor "+this.GetNombre);
             avisarHizoUnaVenta(monto);
         }
         public void AumentaBonus()
@@ -57,6 +58,7 @@ namespace Clase1_.net_core
         public void avisarHizoUnaVenta(int monto)
         {
             Vendedor vendedor = new Vendedor(base.nombre, base.dni, this.sueldoBasico, this.bonus);
+           
             foreach (Gerente avisarGerente in ListaObservador)
             {
                 //Console.WriteLine("Aviso al gerente");

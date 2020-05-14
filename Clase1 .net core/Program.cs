@@ -94,15 +94,16 @@ namespace Clase1_.net_core
             //hacer que gerente sea observador de todos los vendedores
             //ya esta hecho
             Interador interador = coleccion.iterador();
-
+            Console.WriteLine("tengo "+coleccion.Cuantos()+" vendedores");
             for (int n = 1; n <= coleccion.Cuantos(); n++)
             {
                 Vendedor vendedor = (Vendedor)interador.actual();
                 vendedor.AgregargerentecomoObservador(gerente);
+               
                 interador.siguiente();
-                JornadaDeVentas(coleccion);
-                gerente.Cerrar();
             }
+             JornadaDeVentas(coleccion);
+             gerente.Cerrar();
 
 
                 //Ejercicio 4 Practica 4 reparar
@@ -324,15 +325,23 @@ namespace Clase1_.net_core
         {
             Interador interador = coleccionable_vendedores.iterador();
 
-            for (int n = 1; n <= 20; n++)
-            {
-                Vendedor vendedor = (Vendedor)interador.actual();
-                interador.siguiente();
-
-                Random numero_al_azar_entre = new Random();
-                int monto = numero_al_azar_entre.Next(1, 7000);
-                vendedor.Venta(monto);
-            }
+          
+                //para cada vendedor de coleccionable_vendedores...
+                while (!interador.fin())
+                {
+                    Vendedor vendedor = (Vendedor)interador.actual();
+                //repetir esto 20 veces es decir cada vendedor realizara 20 ventas
+                    for (int n = 1; n <= 20; n++)
+                    {
+                    //Vendedor vendedor = (Vendedor)interador.actual();
+                   // interador.siguiente();
+                    // me pide hace una venta y agregarle un monto al azar entre 1 y 700
+                    Random numero_al_azar_entre = new Random();
+                    int monto = numero_al_azar_entre.Next(1, 7000);
+                    vendedor.Venta(monto);
+                    }
+                    interador.siguiente();
+                }
 
         }
         
