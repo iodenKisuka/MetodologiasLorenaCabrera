@@ -1,4 +1,5 @@
-﻿using Clase1_.net_core.Patron_Factory_Method;
+﻿using Clase1_.net_core.Patron_decorador;
+using Clase1_.net_core.Patron_Factory_Method;
 using System;
 using System.Collections.Generic;
 
@@ -8,6 +9,10 @@ namespace Clase1_.net_core
     {
         static void Main(string[] args)
         {
+            AlumnoMuyEstudioso alumT = new AlumnoMuyEstudioso("Teken", 41008448, 123, 10);
+            AdaptadorAlumno alumnoT = new AdaptadorAlumno(alumT);
+            DecoradorGeneralAlumno decorador = new DecoradoLegajo(alumnoT);
+            Console.WriteLine(decorador.MostrarCalificacionStudiante());
 
             //  ContextAlumnoStegy estrategiaalimno = new ContextAlumnoStegy(new Comparar_Alumno_Dni());
             // estrategiaalimno.SosIgual();
