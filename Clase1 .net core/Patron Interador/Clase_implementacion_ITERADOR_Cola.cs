@@ -22,7 +22,7 @@ namespace Clase1_.net_core
 
         public bool fin()
         {
-            if (posicion < colas.Count)
+            if (colas.Count>0)
             {
                 return false;
             }

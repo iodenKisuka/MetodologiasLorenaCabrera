@@ -87,6 +87,7 @@ namespace Clase1_.net_core
             Informar(conjunto2, FabricaCreadorIComprable.CrearAlumno);
 
             **/
+            /**
             //Ejercicio 14 TP3
             IColeccionableTP coleccion = new Pila();
             LLenar(coleccion, FabricaCreadorIComprable.Crearvendedor);
@@ -103,24 +104,31 @@ namespace Clase1_.net_core
                 interador.siguiente();
             }
              JornadaDeVentas(coleccion);
-             gerente.Cerrar();
+             gerente.Cerrar();**/
 
 
-                //Ejercicio 4 Practica 4 reparar
-                /**    Teacher profesor = new Teacher();
-                    for (int n = 1; n <= 10; n++)
-                    {
-                        Alumno alumno1 = new Alumno();
-                        AlumnoMuyEstudioso alumnoE1 = new AlumnoMuyEstudioso();
-                        AdaptadorAlumno alumno2 = new AdaptadorAlumno((Student)alumno1);
-                        AdaptadorAlumno alumnoE2 = new AdaptadorAlumno((Student)alumnoE1);
-                        profesor.goToClass(alumno2.estudiante);
-                        profesor.goToClass(alumnoE2.estudiante);
+            //Ejercicio 4 Practica 4
+                Teacher profesor = new Teacher();
+                for (int n = 1; n <= 10; n++)
+                {
+                    Alumno alumno1 = (Alumno)(FabricaCreadorIComprable.CrearAleatorio(FabricaCreadorIComprable.CrearAlumno));
+                    AlumnoMuyEstudioso alumnoE1 = (AlumnoMuyEstudioso)(FabricaCreadorIComprable.CrearAleatorio(FabricaCreadorIComprable.CrearAlumnoEstudioso));
+                    AdaptadorAlumno alumno2 = new AdaptadorAlumno(alumno1);
+                    AdaptadorAlumno alumnoE2 = new AdaptadorAlumno(alumnoE1);
+                    profesor.goToClass(alumno2);
+                    profesor.goToClass(alumnoE2);
 
-                    }   **/
+                }
+            AlumnoMuyEstudioso alum = new AlumnoMuyEstudioso("Teken",41008448,123,10);
+            AdaptadorAlumno alumno = new AdaptadorAlumno(alum);
+            AlumnoMuyEstudioso alumG = new AlumnoMuyEstudioso("Goten", 42122125, 133, 9);
+            alumno.equals(new AdaptadorAlumno(alumG));
+            profesor.goToClass(alumno);
+            profesor.goToClass(new AdaptadorAlumno(alumG));
+            profesor.teachingAClass();
 
 
-                Console.WriteLine("Hello World!");
+            Console.WriteLine("Hello World!");
 
         }
 
