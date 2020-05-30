@@ -9,10 +9,6 @@ namespace Clase1_.net_core
     {
         static void Main(string[] args)
         {
-            AlumnoMuyEstudioso alumT = new AlumnoMuyEstudioso("Teken", 41008448, 123, 10);
-            AdaptadorAlumno alumnoT = new AdaptadorAlumno(alumT);
-            DecoradorGeneralAlumno decorador = new DecoradoLegajo(alumnoT);
-            Console.WriteLine(decorador.MostrarCalificacionStudiante());
 
             //  ContextAlumnoStegy estrategiaalimno = new ContextAlumnoStegy(new Comparar_Alumno_Dni());
             // estrategiaalimno.SosIgual();
@@ -122,7 +118,7 @@ namespace Clase1_.net_core
                     AdaptadorAlumno alumnoE2 = new AdaptadorAlumno(alumnoE1);
                     profesor.goToClass(alumno2);
                     profesor.goToClass(alumnoE2);
-
+                
                 }
             AlumnoMuyEstudioso alum = new AlumnoMuyEstudioso("Teken",41008448,123,10);
             AdaptadorAlumno alumno = new AdaptadorAlumno(alum);
@@ -131,7 +127,7 @@ namespace Clase1_.net_core
             profesor.goToClass(alumno);
             profesor.goToClass(new AdaptadorAlumno(alumG));
             profesor.teachingAClass();
-
+            
 
             Console.WriteLine("Hello World!");
 
