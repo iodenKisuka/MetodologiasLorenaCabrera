@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Clase1_.net_core
 {
-    class Alumno : Persona
+    class Alumno : Persona, InterfaceAlumno
     {
         int legajo;
         int promedio;
@@ -59,7 +59,7 @@ namespace Clase1_.net_core
         }
 
         //Ejercicio 1 TP4
-       public virtual int responderPregunta(int pregunta)
+       public  int ResponderPregunta(int pregunta)
         {
             Random aleatorio = new Random();
 
@@ -70,8 +70,6 @@ namespace Clase1_.net_core
 
             return GetNombre+" "+UltimaCalificacion;
         }
-
-
 
     }
 }

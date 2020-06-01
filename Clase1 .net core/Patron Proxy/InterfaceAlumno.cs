@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Clase1_.net_core.Patron_Proxy
+namespace Clase1_.net_core
 {
-    interface InterfaceAlumnoparaProxy
+    interface InterfaceAlumno
     {
        int ResponderPregunta(int pregunta);
     }

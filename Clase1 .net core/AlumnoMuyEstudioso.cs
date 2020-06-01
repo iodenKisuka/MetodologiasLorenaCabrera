@@ -10,7 +10,7 @@ namespace Clase1_.net_core
         {
         }
 
-        public override int responderPregunta(int pregunta)
+        public  int ResponderPregunta(int pregunta)
         {
             return pregunta%3;
         }

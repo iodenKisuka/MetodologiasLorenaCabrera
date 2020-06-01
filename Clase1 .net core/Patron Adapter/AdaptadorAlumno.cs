@@ -7,6 +7,7 @@ namespace Clase1_.net_core
     class AdaptadorAlumno : Student
     {
         public Alumno estudiante;
+      
 
          public AdaptadorAlumno(Alumno estudiante)
          {
@@ -49,7 +50,7 @@ namespace Clase1_.net_core
 
         public int yourAnswerIs(int question)
         {
-            return estudiante.responderPregunta(question) ;
+            return estudiante.ResponderPregunta(question) ;
         }
     }
 }
