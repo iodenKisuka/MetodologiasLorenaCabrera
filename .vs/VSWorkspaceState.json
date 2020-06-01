@@ -2,8 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\Clase1 .net core",
+    "\\Clase1 .net core\\Patron Adapter",
     "\\Clase1 .net core\\Patron Interador"
   ],
-  "SelectedNode": "\\actividad1_core.sln",
+  "SelectedNode": "\\Clase1 .net core\\Patron Adapter\\AdaptadorAlumno.cs",
   "PreviewInSolutionExplorer": false
 }
