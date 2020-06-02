@@ -1,11 +1,12 @@
-﻿using System;
+﻿using Clase1_.net_core.Patron_Command;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Clase1_.net_core
 {
-    class Cola: IColeccionableTP
+    class Cola: IColeccionableTP, IOrdenable
     {
         private Queue<IComparableP> colas = new Queue<IComparableP>();
 
@@ -92,6 +93,35 @@ namespace Clase1_.net_core
         public Interador iterador()
         {
             return new Clase_implementacion_ITERADOR_Cola(Clonar());
+        }
+
+
+        //IMPLEMENTACION DE IORDEABLE
+        public void SetOrdenInicio(IOrdenEnAula1 orden)
+        {
+            if (Cuantos()==1)
+            {   //Comente esto por las dudas 
+                /** Queue<IComparableP> colas_copia4;
+                colas_copia4 = Clonar();
+                Aula aula = (Aula)colas_copia4.Peek();
+                orden = new OrdenInicio(aula); **/
+                orden.Ejecutar();
+            }
+        }
+
+        public void SetOrdenLLegaAlumno(IOrdenEnAula2 orden2)
+        {
+            Cola colaActual = new Cola();
+            colaActual.colas = colas;
+            orden2.ejecutar(colaActual);
+        }
+
+        public void SetOrdenAulaLlena(IOrdenEnAula1 orden)
+        {
+            if (Cuantos()==40)
+            {
+                orden.Ejecutar();
+            }
         }
 
 

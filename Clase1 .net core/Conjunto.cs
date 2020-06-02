@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Clase1_.net_core
 {
-    class Conjunto : IColeccionableTP
+    class Conjunto : IColeccionableTP,IOrdenable
     {
         // HashSet<IComparableP> Lista_conjunto= new HashSet<IComparableP> ();
        public List<IComparableP> Listacomparable = new List<IComparableP>();
@@ -98,6 +98,31 @@ namespace Clase1_.net_core
         public Interador iterador()
         {
            return new Clase_implementacion_ITERADOR_Conjunto(Listacomparable);
+        }
+
+        //IMPLEMENTACION DE IORDEABLE
+       
+        public void SetOrdenLLegaAlumno(IOrdenEnAula2 orden2)
+        {
+            Conjunto coleccionActual = new Conjunto();
+            coleccionActual.Listacomparable = Listacomparable;
+            orden2.ejecutar(coleccionActual);
+        }
+
+        public void SetOrdenAulaLlena(IOrdenEnAula1 orden)
+        {
+            if (Cuantos() == 40)
+            {
+                orden.Ejecutar();
+            }
+        }
+
+        public void SetOrdenInicio(IOrdenEnAula1 orden)
+        {
+            if (Cuantos() == 1)
+            {   
+                orden.Ejecutar();
+            }
         }
     }
 }

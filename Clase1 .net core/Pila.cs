@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Clase1_.net_core
 {
-    class Pila : IColeccionableTP
+    class Pila : IColeccionableTP,IOrdenable
     {
         Stack<IComparableP> pilas= new Stack<IComparableP>();
 
@@ -106,6 +106,31 @@ namespace Clase1_.net_core
         public Interador iterador()
         {
             return new Clase_implementacion_ITERADOR_Pila(Clonar());
+        }
+
+
+        //IMPLEMENTACION DE IORDEABLE
+        public void SetOrdenInicio(IOrdenEnAula1 orden)
+        {
+            if (Cuantos() == 1)
+            {
+                orden.Ejecutar();
+            }
+        }
+
+        public void SetOrdenLLegaAlumno(IOrdenEnAula2 orden2)
+        {
+            Pila coleccionActual = new Pila();
+            coleccionActual.pilas = pilas;
+            orden2.ejecutar(coleccionActual);
+        }
+
+        public void SetOrdenAulaLlena(IOrdenEnAula1 orden)
+        {
+            if (Cuantos() == 40)
+            {
+                orden.Ejecutar();
+            }
         }
 
 

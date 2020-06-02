@@ -5,7 +5,8 @@ using System.Text;
 
 namespace Clase1_.net_core
 {
-    class Diccionario : IColeccionableTP{
+    class Diccionario : IColeccionableTP,IOrdenable
+    {
 
         public Dictionary<IComparableP, object> diccionario = new Dictionary<IComparableP, object>();
 
@@ -129,5 +130,28 @@ namespace Clase1_.net_core
             return new Clase_implementacion_ITERADOR_Diccionario(diccionario);
         }
 
+        //IMPLEMENTACION DE IORDEABLE
+        public void SetOrdenInicio(IOrdenEnAula1 orden)
+        {
+            if (Cuantos() == 1)
+            {
+                orden.Ejecutar();
+            }
+        }
+
+        public void SetOrdenLLegaAlumno(IOrdenEnAula2 orden2)
+        {
+           Diccionario coleccionActual = new Diccionario();
+            coleccionActual.diccionario = diccionario;
+            orden2.ejecutar(coleccionActual);
+        }
+
+        public void SetOrdenAulaLlena(IOrdenEnAula1 orden)
+        {
+            if (Cuantos() == 40)
+            {
+                orden.Ejecutar();
+            }
+        }
     }
 }
