@@ -114,8 +114,8 @@ namespace Clase1_.net_core
                 for (int n = 1; n <= 10; n++)
                 {
                 //Hasta aca es originalmente ejercicio 4 tp 4
-                Alumno alumno1 = (Alumno)(FabricaCreadorIComprable.CrearAleatorio(FabricaCreadorIComprable.CrearAlumno));
-                AlumnoMuyEstudioso alumnoE1 = (AlumnoMuyEstudioso)(FabricaCreadorIComprable.CrearAleatorio(FabricaCreadorIComprable.CrearAlumnoEstudioso));
+                //Alumno alumno1 = (Alumno)(FabricaCreadorIComprable.CrearAleatorio(FabricaCreadorIComprable.CrearAlumno));
+                //AlumnoMuyEstudioso alumnoE1 = (AlumnoMuyEstudioso)(FabricaCreadorIComprable.CrearAleatorio(FabricaCreadorIComprable.CrearAlumnoEstudioso));
                //La modificacion para que sea Ejercicio 2 Prectica 5
                 ProxyAlumno  proxy = new ProxyAlumno();
                 proxy.tipo_alumno = 1;

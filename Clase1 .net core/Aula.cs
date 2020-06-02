@@ -23,5 +23,6 @@ namespace Clase1_.net_core
         {
             teacher.teachingAClass();
         }
+
     }
 }
