@@ -1,4 +1,5 @@
-﻿using Clase1_.net_core.Patron_decorador;
+﻿using Clase1_.net_core.Patron_Command;
+using Clase1_.net_core.Patron_decorador;
 using Clase1_.net_core.Patron_Factory_Method;
 
 using System;
@@ -110,36 +111,48 @@ namespace Clase1_.net_core
 
 
             //Ejercicio 4 Practica 4
-                Teacher profesor = new Teacher();
-                for (int n = 1; n <= 10; n++)
-                {
-                //Hasta aca es originalmente ejercicio 4 tp 4
-                //Alumno alumno1 = (Alumno)(FabricaCreadorIComprable.CrearAleatorio(FabricaCreadorIComprable.CrearAlumno));
-                //AlumnoMuyEstudioso alumnoE1 = (AlumnoMuyEstudioso)(FabricaCreadorIComprable.CrearAleatorio(FabricaCreadorIComprable.CrearAlumnoEstudioso));
-               //La modificacion para que sea Ejercicio 2 Prectica 5
-                ProxyAlumno  proxy = new ProxyAlumno();
-                proxy.tipo_alumno = 1;
-                proxy.ResponderPregunta(1);
-                ProxyAlumno proxy2 = new ProxyAlumno();
-                proxy2.tipo_alumno = 2;
-                proxy2.ResponderPregunta(2);
-                AdaptadorAlumno alumno2 = new AdaptadorAlumno(proxy.AlumnoReal);
-                AdaptadorAlumno alumnoE2 = new AdaptadorAlumno(proxy2.AlumnoReal);
-                //Lo que sigue siendo original
-                // AdaptadorAlumno alumno2 = new AdaptadorAlumno(alumno1);
-                //   AdaptadorAlumno alumnoE2 = new AdaptadorAlumno(alumnoE1);
-                profesor.goToClass(alumno2);
-                    profesor.goToClass(alumnoE2);
-                
-                }
-            AlumnoMuyEstudioso alum = new AlumnoMuyEstudioso("Teken",41008448,123,10);
-            AdaptadorAlumno alumno = new AdaptadorAlumno(alum);
-            AlumnoMuyEstudioso alumG = new AlumnoMuyEstudioso("Goten", 42122125, 133, 9);
-            alumno.equals(new AdaptadorAlumno(alumG));
-            profesor.goToClass(alumno);
-            profesor.goToClass(new AdaptadorAlumno(alumG));
-            profesor.teachingAClass();
+            /**   Teacher profesor = new Teacher();
+               for (int n = 1; n <= 10; n++)
+               {
+               //Hasta aca es originalmente ejercicio 4 tp 4
+               //Alumno alumno1 = (Alumno)(FabricaCreadorIComprable.CrearAleatorio(FabricaCreadorIComprable.CrearAlumno));
+               //AlumnoMuyEstudioso alumnoE1 = (AlumnoMuyEstudioso)(FabricaCreadorIComprable.CrearAleatorio(FabricaCreadorIComprable.CrearAlumnoEstudioso));
+              //La modificacion para que sea Ejercicio 2 Prectica 5
+               ProxyAlumno  proxy = new ProxyAlumno();
+               proxy.tipo_alumno = 1;
+               proxy.ResponderPregunta(1);
+               ProxyAlumno proxy2 = new ProxyAlumno();
+               proxy2.tipo_alumno = 2;
+               proxy2.ResponderPregunta(2);
+               AdaptadorAlumno alumno2 = new AdaptadorAlumno(proxy.AlumnoReal);
+               AdaptadorAlumno alumnoE2 = new AdaptadorAlumno(proxy2.AlumnoReal);
+               //Lo que sigue siendo original
+               // AdaptadorAlumno alumno2 = new AdaptadorAlumno(alumno1);
+               //   AdaptadorAlumno alumnoE2 = new AdaptadorAlumno(alumnoE1);
+               profesor.goToClass(alumno2);
+                   profesor.goToClass(alumnoE2);
+               
+               }
+           AlumnoMuyEstudioso alum = new AlumnoMuyEstudioso("Teken",41008448,123,10);
+           AdaptadorAlumno alumno = new AdaptadorAlumno(alum);
+           AlumnoMuyEstudioso alumG = new AlumnoMuyEstudioso("Goten", 42122125, 133, 9);
+           alumno.equals(new AdaptadorAlumno(alumG));
+           profesor.goToClass(alumno);
+           profesor.goToClass(new AdaptadorAlumno(alumG));
+           profesor.teachingAClass();
+           **/
+
+            Pila  pila = new Pila();
+            Aula aula = new Aula();
+            pila.SetOrdenInicio(new OrdenInicio(aula));
+            pila.SetOrdenLLegaAlumno(new OrdenLlegaAlumno(aula));
+            pila.SetOrdenAulaLlena(new OrdenAulaLlena(aula));
+            LLenar(pila, FabricaCreadorIComprable.CrearAlumno);
             
+           
+
+
+
 
             Console.WriteLine("Hello World!");
 
