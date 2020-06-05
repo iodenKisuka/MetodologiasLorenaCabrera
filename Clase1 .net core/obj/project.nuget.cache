@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "0XIqQaIcvj7/JVmSbHAmzHHvfRLAd+WQpqejUwFaDf1FWp5mXJsbBPGdEtiqKOSgJh6S08THODeLkCXiixN06Q==",
+  "dgSpecHash": "t818xElKlukNOsPDyrSCksEGwSwWZQFkPSOAgupKnW1HaecR5UFZki25JxnCoglpW/kJOhVqUD2BtL1ULYAWtQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Lorena\\source\\repos\\iodenKisuka\\iodenKisuka\\MetodologiasLorenaCabrera\\Clase1 .net core\\Clase1 .net core.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\loren\\source\\repos\\iodenKisuka\\MetodologiasLorenaCabrera\\Clase1 .net core\\Clase1 .net core.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\loren\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.2\\microsoft.aspnetcore.app.ref.3.1.2.nupkg.sha512"
+  ],
   "logs": []
 }
