@@ -55,15 +55,34 @@ namespace Clase1_.net_core
                     default:
                         break;
                 }
+                if(R1>=R2 && R1 >= R3)
+                {
+                    return R1;
+                }
+                else if (R2 >= R1 && R2 >= R3)
+                {
+                    return R2;
+                }
+                else if (R3 >= R1 && R3 >= R2)
+                {
+                    return R1;
+                }
+
+
             }
 
 
             return Respuesta_Mayoritaria;
         }
 
-        public int SetCalificacion()
+        public double SetCalificacion()
         {
-            throw new NotImplementedException();
+            double calificacion = 0;
+            foreach (IcomponenteAlumno alumnoS in grupodeAlumnos)
+            {
+                calificacion = calificacion + alumnoS.SetCalificacion();
+            }
+            return calificacion;
         }
 
         public bool SosIgual(Alumno alumno)
