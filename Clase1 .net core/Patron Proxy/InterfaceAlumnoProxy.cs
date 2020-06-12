@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Clase1_.net_core
 {
-    interface InterfaceAlumno
+    interface InterfaceAlumnoProxy
     {
        int ResponderPregunta(int pregunta);
     }

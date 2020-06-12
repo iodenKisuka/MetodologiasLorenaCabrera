@@ -43,3 +43,10 @@ C:\Users\loren\source\repos\iodenKisuka\MetodologiasLorenaCabrera\Clase1 .net co
 C:\Users\loren\source\repos\iodenKisuka\MetodologiasLorenaCabrera\Clase1 .net core\obj\Debug\netcoreapp3.1\Clase1 .net core.csproj.CoreCompileInputs.cache
 C:\Users\loren\source\repos\iodenKisuka\MetodologiasLorenaCabrera\Clase1 .net core\obj\Debug\netcoreapp3.1\Clase1 .net core.dll
 C:\Users\loren\source\repos\iodenKisuka\MetodologiasLorenaCabrera\Clase1 .net core\obj\Debug\netcoreapp3.1\Clase1 .net core.pdb
+C:\Users\loren\source\repos\iodenKisuka\MetodologiasLorenaCabrera\Clase1 .net core\bin\Debug\netcoreapp3.1\Clase1 .net core.exe
+C:\Users\loren\source\repos\iodenKisuka\MetodologiasLorenaCabrera\Clase1 .net core\bin\Debug\netcoreapp3.1\Clase1 .net core.deps.json
+C:\Users\loren\source\repos\iodenKisuka\MetodologiasLorenaCabrera\Clase1 .net core\bin\Debug\netcoreapp3.1\Clase1 .net core.runtimeconfig.json
+C:\Users\loren\source\repos\iodenKisuka\MetodologiasLorenaCabrera\Clase1 .net core\bin\Debug\netcoreapp3.1\Clase1 .net core.runtimeconfig.dev.json
+C:\Users\loren\source\repos\iodenKisuka\MetodologiasLorenaCabrera\Clase1 .net core\bin\Debug\netcoreapp3.1\Clase1 .net core.dll
+C:\Users\loren\source\repos\iodenKisuka\MetodologiasLorenaCabrera\Clase1 .net core\bin\Debug\netcoreapp3.1\Clase1 .net core.pdb
+C:\Users\loren\source\repos\iodenKisuka\MetodologiasLorenaCabrera\Clase1 .net core\obj\Debug\netcoreapp3.1\Clase1 .net core.genruntimeconfig.cache

@@ -8,13 +8,14 @@ namespace Clase1_.net_core.Patron_decorador
     {
         public DecoradorNotaConLetras(Student alumno) : base(alumno)
         {
+
             alumnoAdaptado = ((AdaptadorAlumno)alumno).estudiante;
         }
 
         public override string MostrarCalificacionStudiante()
         {
             string calificacion = "";
-            switch (alumnoAdaptado.UltimaCalificacion)
+            switch (alumnoAdaptado.SetCalificacion())
             {
                 case 1:
                     calificacion = " UNO";

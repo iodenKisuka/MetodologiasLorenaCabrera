@@ -11,7 +11,12 @@ namespace Clase1_.net_core.Patron_Factory_Method
         public const int CrearAlumno = 1;
         public const int CrearAlumnoEstudioso = 2;
         public const int Crearvendedor = 3;
+        public const int CrearGrupoAlumnos = 4;
+        public const int CrearGrupoAlumnosProxy = 5;
         public static int valorMaximo;
+
+
+
         public static IComparableP CrearAleatorio(int tipo)
         {
             switch (tipo)
@@ -25,6 +30,10 @@ namespace Clase1_.net_core.Patron_Factory_Method
                     return new FabricaDeNumeros().CrearNumeroAlAzar(valorMaximo);
                 case Crearvendedor:
                     return new FabricaVendedor().CrearVendedorAlAzar();
+                case CrearGrupoAlumnos:
+                    return new FabricaDe5Alumnos_compuesto().CrearAlumnosAlAzar();
+                case CrearGrupoAlumnosProxy:
+                    return new FabricaGrupoProxy().CrearAlumnosAlAzar();
                 default:
                     return null;
             }
@@ -41,6 +50,11 @@ namespace Clase1_.net_core.Patron_Factory_Method
                     return new FabricaDeNumeros().CrearNumeroPorTeclado();
                 case Crearvendedor:
                     return new FabricaVendedor().CrearVendedorPorTeclado();
+                case CrearGrupoAlumnos:
+                    return new FabricaDe5Alumnos_compuesto().CrearAlumnosPorTeclado();
+                case CrearGrupoAlumnosProxy:
+                    return new FabricaGrupoProxy().CrearAlumnosPorTeclado();
+
                 default:
                     return null;
             }

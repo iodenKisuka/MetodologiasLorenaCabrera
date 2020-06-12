@@ -8,12 +8,12 @@ namespace Clase1_.net_core.Patron_decorador
     {
         
         protected string Texto;
-        protected Alumno alumnoAdaptado;
+        protected IcomponenteAlumno alumnoAdaptado;
 
         protected DecoradorGeneralAlumno(Student alumno)
         {
             alumnoAdaptado = ((AdaptadorAlumno)alumno).estudiante;
-            Texto = alumnoAdaptado.GetNombre + " " + alumnoAdaptado.UltimaCalificacion;
+            Texto = alumnoAdaptado.GetNombre() + " " + alumnoAdaptado.SetCalificacion();
         }
 
         public abstract string MostrarCalificacionStudiante();

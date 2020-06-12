@@ -13,12 +13,13 @@ namespace Clase1_.net_core.Patron_decorador
 
         public override string MostrarCalificacionStudiante()
         {
+           // Alumno alumnoA = (Alumno)alumnoAdaptado;
             string SaberSiAprobo;
-            if (alumnoAdaptado.UltimaCalificacion>=7)
+            if (alumnoAdaptado.CalificacionI>=7)
             {
                 SaberSiAprobo = " Promocion";
             }
-            if (alumnoAdaptado.UltimaCalificacion<7 & alumnoAdaptado.UltimaCalificacion>4)
+            if (alumnoAdaptado.CalificacionI<7 & alumnoAdaptado.CalificacionI>4)
             {
                 SaberSiAprobo = " Aprobado";
             }

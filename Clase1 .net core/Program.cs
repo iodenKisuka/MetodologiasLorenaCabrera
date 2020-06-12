@@ -1,7 +1,7 @@
 ﻿using Clase1_.net_core.Patron_Command;
 using Clase1_.net_core.Patron_decorador;
 using Clase1_.net_core.Patron_Factory_Method;
-
+using Clase1_.net_core;
 using System;
 using System.Collections.Generic;
 
@@ -111,8 +111,8 @@ namespace Clase1_.net_core
 
 
             //Ejercicio 4 Practica 4
-            /**   Teacher profesor = new Teacher();
-               for (int n = 1; n <= 10; n++)
+              Teacher profesor = new Teacher();
+              /** for (int n = 1; n <= 10; n++)
                {
                //Hasta aca es originalmente ejercicio 4 tp 4
                //Alumno alumno1 = (Alumno)(FabricaCreadorIComprable.CrearAleatorio(FabricaCreadorIComprable.CrearAlumno));
@@ -126,13 +126,29 @@ namespace Clase1_.net_core
                proxy2.ResponderPregunta(2);
                AdaptadorAlumno alumno2 = new AdaptadorAlumno(proxy.AlumnoReal);
                AdaptadorAlumno alumnoE2 = new AdaptadorAlumno(proxy2.AlumnoReal);
-               //Lo que sigue siendo original
-               // AdaptadorAlumno alumno2 = new AdaptadorAlumno(alumno1);
-               //   AdaptadorAlumno alumnoE2 = new AdaptadorAlumno(alumnoE1);
+
+                //Lo que sigue siendo original
+                // AdaptadorAlumno alumno2 = new AdaptadorAlumno(alumno1);
+                //   AdaptadorAlumno alumnoE2 = new AdaptadorAlumno(alumnoE1);
+
                profesor.goToClass(alumno2);
-                   profesor.goToClass(alumnoE2);
+              profesor.goToClass(alumnoE2);
                
-               }
+               }    **/
+
+            // --- modificacion para hacer Practica 6 ejercicio 2
+           /** GrupoDeAlumno grupoDeAlumnos = (GrupoDeAlumno)FabricaCreadorIComprable.CrearAleatorio(FabricaCreadorIComprable.CrearGrupoAlumnosProxy);
+           foreach (IcomponenteAlumno alumn in grupoDeAlumnos.ListagrupodeAlumnos)
+            {
+                ProxyAlumno proxy = (ProxyAlumno)alumn;
+                proxy.tipo_alumno = FabricaCreadorIComprable.CrearAlumno;
+                proxy.ResponderPregunta(2);
+                AdaptadorAlumno grupoEstudiantes = new AdaptadorAlumno(proxy.AlumnoReal);
+                profesor.goToClass(grupoEstudiantes);
+            
+            } 
+          
+
            AlumnoMuyEstudioso alum = new AlumnoMuyEstudioso("Teken",41008448,123,10);
            AdaptadorAlumno alumno = new AdaptadorAlumno(alum);
            AlumnoMuyEstudioso alumG = new AlumnoMuyEstudioso("Goten", 42122125, 133, 9);
@@ -140,18 +156,21 @@ namespace Clase1_.net_core
            profesor.goToClass(alumno);
            profesor.goToClass(new AdaptadorAlumno(alumG));
            profesor.teachingAClass();
-           **/
+           
 
-            Pila  pila = new Pila();
+            //Ejercicio 10 practica 5
+            Pila pila = new Pila();
             Aula aula = new Aula();
             pila.SetOrdenInicio(new OrdenInicio(aula));
             pila.SetOrdenLLegaAlumno(new OrdenLlegaAlumno(aula));
             pila.SetOrdenAulaLlena(new OrdenAulaLlena(aula));
             LLenar(pila, FabricaCreadorIComprable.CrearAlumno);
-            
-           
+           **/
 
-
+            Alumno alumno1 = (Alumno) FabricaCreadorIComprable.CrearAleatorio(FabricaCreadorIComprable.CrearAlumno);
+            Alumno alumno2 = (Alumno)FabricaCreadorIComprable.CrearAleatorio(FabricaCreadorIComprable.CrearAlumno);
+            Jugar juego = new Jugar(alumno1,alumno2);
+            juego.Comenzar_Juego( new Juego2());
 
 
             Console.WriteLine("Hello World!");

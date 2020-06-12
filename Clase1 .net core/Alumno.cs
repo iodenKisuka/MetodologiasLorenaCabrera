@@ -4,16 +4,16 @@ using System.Text;
 
 namespace Clase1_.net_core
 {
-    class Alumno : Persona, InterfaceAlumno,IcomponenteAlumno
+    class Alumno : Persona, InterfaceAlumnoProxy,IcomponenteAlumno
     {
         int legajo;
         int promedio;
         private double calificacion;
         // agregue esto como adicional para aplicar interface icomplementoAlumno
         private int respuesta;
-       
 
-        public double UltimaCalificacion { get => calificacion; set => calificacion = value; }
+        public double CalificacionI { get => calificacion; set => calificacion = value; }
+       
         public int GetLegajo
         {
             get { return legajo; }
@@ -50,7 +50,8 @@ namespace Clase1_.net_core
 
        public IEstrategia_Comparar_Alumno Estrategia_elegida{ get; set; }
         
-       
+
+
 
         //delegar las acciones
         public void Comparar_Alumnos()
@@ -93,16 +94,17 @@ namespace Clase1_.net_core
 
         public double SetCalificacion()
         {
-          return UltimaCalificacion;
+          return CalificacionI;
         }
 
         public string MostrarCalificacion()
         {
-            return GetNombre + " " + UltimaCalificacion;
+            return GetNombre + " " + CalificacionI;
         }
 
-        public bool SosIgual(Alumno alumno)
+     /**   public bool SosIgual(IComparableP variable)
         {
+            Alumno alumno = (Alumno)variable;
             if (Estrategia_elegida == null)
             {
                 Estrategia_elegida = new Comparar_Alumno_Dni();
@@ -112,8 +114,9 @@ namespace Clase1_.net_core
            return estrategia.SosIgual(ThisAlumno,alumno);
         }
 
-        public bool SosMenor(Alumno alumno)
+        public bool SosMenor(IComparableP variable)
         {
+            Alumno alumno = (Alumno)variable;
             if (Estrategia_elegida == null)
             {
                 Estrategia_elegida = new Comparar_Alumno_Dni();
@@ -123,8 +126,9 @@ namespace Clase1_.net_core
             return estrategia.SosMenor(ThisAlumno, alumno);
         }
 
-        public bool SosMayor(Alumno alumno)
+        public bool SosMayor(IComparableP variable)
         {
+            Alumno alumno = (Alumno)variable;
             if (Estrategia_elegida == null)
             {
                 Estrategia_elegida = new Comparar_Alumno_Dni();
@@ -132,6 +136,7 @@ namespace Clase1_.net_core
             ContextAlumnoStegy estrategia = new ContextAlumnoStegy(Estrategia_elegida);
             Alumno ThisAlumno = new Alumno(nombre, dni, legajo, promedio);
             return estrategia.SosMayor(ThisAlumno, alumno);
-        }
+        }   **/
+
     }
 }

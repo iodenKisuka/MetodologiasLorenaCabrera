@@ -6,12 +6,13 @@ namespace Clase1_.net_core
 {
     class AdaptadorAlumno : Student
     {
-        public Alumno estudiante;
+        public IcomponenteAlumno estudiante;
       
 
-         public AdaptadorAlumno(Alumno estudiante)
+         public AdaptadorAlumno(IcomponenteAlumno estudiante1)
          {
-             this.estudiante = estudiante;
+
+             this.estudiante = estudiante1;
          }
 
         public bool equals(Student student)
@@ -22,7 +23,7 @@ namespace Clase1_.net_core
 
         public string getName()
         {
-            return estudiante.GetNombre;
+            return estudiante.GetNombre();
         }
 
         public bool greaterThan(Student student)
@@ -39,13 +40,12 @@ namespace Clase1_.net_core
 
         public void setScore(int score)
         {
-            estudiante.UltimaCalificacion = score;
-            estudiante.mostrarCalificación();
+            estudiante.CalificacionI = score;
         }
 
         public string showResult()
         {
-            return estudiante.mostrarCalificación();
+            return estudiante.MostrarCalificacion();
         }
 
         public int yourAnswerIs(int question)

@@ -4,15 +4,16 @@ using System.Text;
 
 namespace Clase1_.net_core
 {
-    interface IcomponenteAlumno
+    interface IcomponenteAlumno: IComparableP,InterfaceAlumnoProxy
     {
+        public double CalificacionI { get; set; }
         string GetNombre();
         int Responder();
         double SetCalificacion();
        string MostrarCalificacion();
-        bool SosIgual(Alumno alumno);
-        bool SosMenor(Alumno alumno);
-        bool SosMayor(Alumno alumno);
+        /**bool SosIgual(IComparableP variable);
+        bool SosMenor(IComparableP variable);
+        bool SosMayor(IComparableP variable);   **/
 
 
     }

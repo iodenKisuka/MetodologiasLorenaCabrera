@@ -5,17 +5,27 @@ using System.Text;
 
 namespace Clase1_.net_core
 {
-    class GrupoDeAlumno : IcomponenteAlumno
+    class GrupoDeAlumno :IcomponenteAlumno
     {
-        List<IcomponenteAlumno> grupodeAlumnos = new List<IcomponenteAlumno>();
+        public List<IcomponenteAlumno> ListagrupodeAlumnos = new List<IcomponenteAlumno>();
+        public double calificacionGrupal;
+
+        public double CalificacionI { get => calificacionGrupal; set=> calificacionGrupal=value; }
+       
         public void Agregar_alumno(IcomponenteAlumno alumno)
         {
-            grupodeAlumnos.Add(alumno);
+            ListagrupodeAlumnos.Add(alumno);
         }
+        //constructor
+       public GrupoDeAlumno()
+        {
+            calificacionGrupal = 0;
+        }
+
         public string GetNombre()
         {
             string nombres = "";
-           foreach (IcomponenteAlumno alumnoS in grupodeAlumnos)
+           foreach (IcomponenteAlumno alumnoS in ListagrupodeAlumnos)
             {
                 nombres=nombres+" "+alumnoS.GetNombre();
             }
@@ -25,7 +35,7 @@ namespace Clase1_.net_core
         public string MostrarCalificacion()
         {
             string mostrar = "";
-            foreach (IcomponenteAlumno alumnoS in grupodeAlumnos)
+            foreach (IcomponenteAlumno alumnoS in ListagrupodeAlumnos)
             {
                 //GetNombre + " " + UltimaCalificacion;
                 mostrar = "\n " + alumnoS.MostrarCalificacion();
@@ -39,7 +49,7 @@ namespace Clase1_.net_core
             int R2 = 0;
             int R3 = 0;
             int Respuesta_Mayoritaria = 0;
-            foreach(IcomponenteAlumno alumnoS in grupodeAlumnos)
+            foreach(IcomponenteAlumno alumnoS in ListagrupodeAlumnos)
             {
                 switch (alumnoS.Responder()) 
                 {
@@ -75,34 +85,64 @@ namespace Clase1_.net_core
             return Respuesta_Mayoritaria;
         }
 
+        public int ResponderPregunta(int pregunta)
+        {
+           return Responder();
+        }
+
         public double SetCalificacion()
         {
-            double calificacion = 0;
-            foreach (IcomponenteAlumno alumnoS in grupodeAlumnos)
+            
+            foreach (IcomponenteAlumno alumnoS in ListagrupodeAlumnos)
             {
-                calificacion = calificacion + alumnoS.SetCalificacion();
+                calificacionGrupal = calificacionGrupal + alumnoS.SetCalificacion();
+                
             }
-            return calificacion;
+            return calificacionGrupal/ListagrupodeAlumnos.Count;
         }
 
-        public bool SosIgual(Alumno alumno)
+        public bool SosIgual(IComparableP variable)
         {
-            throw new NotImplementedException();
+            Alumno alumno = (Alumno)variable;
+            foreach (IcomponenteAlumno alumnoS in ListagrupodeAlumnos)
+            {
+                if (alumnoS.SosIgual(alumno))
+                {
+                    return true;
+                }
+            }
+            return false;
         }
 
-        public bool SosMayor(Alumno alumno)
+
+        
+
+        public bool SosMayor(IComparableP variable)
         {
-            throw new NotImplementedException();
+            Alumno alumno = (Alumno)variable;
+            foreach (IcomponenteAlumno alumnoS in ListagrupodeAlumnos)
+            {
+                if (alumnoS.SosMayor(alumno))
+                {
+                    return true;
+                }
+            }
+            return false;
         }
 
-        public bool SosMenor(Alumno alumno)
+        public bool SosMenor(IComparableP variable)
         {
-            throw new NotImplementedException();
+            Alumno alumno = (Alumno)variable;
+            foreach (IcomponenteAlumno alumnoS in ListagrupodeAlumnos)
+            {
+                if (alumnoS.SosMenor(alumno))
+                {
+                    return true;
+                }
+            }
+            return false;
         }
 
-        double IcomponenteAlumno.SetCalificacion()
-        {
-            throw new NotImplementedException();
-        }
+        
     }
 }

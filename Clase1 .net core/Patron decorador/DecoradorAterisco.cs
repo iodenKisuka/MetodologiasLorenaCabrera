@@ -8,7 +8,7 @@ namespace Clase1_.net_core.Patron_decorador
     {
         public DecoradorAterisco(Student alumno) : base(alumno)
         {
-            alumnoAdaptado = ((AdaptadorAlumno)alumno).estudiante;
+            //alumnoAdaptado = ((AdaptadorAlumno)alumno).estudiante;
         }
 
         public override string MostrarCalificacionStudiante()
